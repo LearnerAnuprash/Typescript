@@ -34,3 +34,26 @@ class khalti extends Payment {
 }
 
 //TODO ***** Functions in TypeScript ***** //
+
+function abcd(name: string, age: number, cb: (arg: string) => void) {}
+
+abcd("Anuprash", 20, (arg: string) => {
+  console.log(arg);
+}); // In the third argument of the function ,
+// we passed the arrow function itself
+
+// TODO  Optional & Default parameters in Functions
+
+function abcdef(name: string, age: number, gender?: string) {} // Optional parameter :  [ ?: string ]
+
+abcdef("harsh", 25, "male");
+abcdef("ram", 17); // Optional parameter gender
+
+//TODO  Defaut parameters
+
+function abc(name: string, gender: string = "not to be disclosed") {
+  // default argument
+  console.log(name, gender);
+}
+
+abc("Anuprash");
