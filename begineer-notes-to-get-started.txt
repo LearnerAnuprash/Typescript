@@ -1,0 +1,154 @@
+# What is typescript ? 
+ 
+Typescript is a language built over javascript which provides typesafety which javascript lacks. 
+
+For eg : 
+       In javascript , we can write:
+  					a=1;
+					a="Ram";
+    & it would not be a syntax error . 
+
+But in typescript the above syntax would show error. 
+
+Data types in Typescript : 
+1. Primitives  : number , string , character , etc .
+2. Reference : [] , {} , ()
+
+​Example syntax : ( Tuples ) 
+​  let arr: [string,number] = ["Harsh",22]
+
+​Example syntax: ( Enums/ Enumerations ) 
+​ ​​​​    enum UserRoles{
+		ADMIN = "admin",
+		GUEST = "guest",
+		SUPER_ADMIN = "super_admin"
+	}
+
+	enum StatusCodes {
+		ABANDONED = "status code 500",
+		NOTFOUND = "status code 404"
+	
+        }
+
+	StatusCodes.NOTFOUND
+
+## ​Type Syntax:
+	
+	​let a : number;
+	a=12;  
+
+ // Here 'a' is de​​​fined as a number so later we 
+     cannot change the datatype of 'a' to other 		
+     datatypes​​
+
+​=> ​Any , Unknown , Void , Null , Undefined , 
+      Never ​​​​
+
+	​i) Any = typesafety off ( no restrictions )
+
+      ii) Unknown = typescript says you can do 	
+            whatever to the variable but check if its 
+            the required data type then only operate 
+             on it.​​
+	
+	​iii) Void syntax: 
+   		
+		function abcd() : boolean {
+						}​​
+	​iv) Null : 
+              -> Returns nothing 
+                   ​Syntax: 
+  				​let a :null;
+ 				a=5 // throws an error 	
+				            because​​​​​​ we set it to 		
+                                             null 1st 
+       v) Undefined : 
+			-> let a: undefined ;
+
+	vi) never : 	
+			-> It states that the function 
+                       won't  return anything and never 
+                        get out from there !
+		​Never Syntax : ​
+                          function abcd() :never {
+					while(true) {}
+						}
+			abcd();
+			console.log("He​​​​y");
+			
+			//In the program above , the code 	
+			console.log will not run as the 
+			function called above is of type 			
+			null so it is stuck in the function 
+			itself. 
+​​​​​
+
+### ​Type Inference & Type annotations 
+
+​-> Type inference is the phenomenon where typescript itself finds the data type by seeing the assigned value . 
+    Example: let a=12; // automatic a: number;
+
+-> Type annotation is the phenomenon where we define the data type by ourselves . 
+     Example : let a: number;​​​​
+
+​Type annotation example : 
+
+​function abcd( a: number , b: string ) : void {}
+​​​​
+// the parameters could be annotated 
+// Also the return type could be defined
+
+#### ​Type annotations : 
+
+
+​interface User {
+	name:string,
+	email: string ,
+	password: string
+}​​
+​function abcd( obj : User )​​
+{
+
+}
+
+​abcd(); // Will throw error needs object as argument
+
+// so correct is : 
+
+abcd({});
+​​
+
+##### ​Optional interface : 
+
+
+​Interface User ={
+	​​​​name: string ,
+	email: string ,
+	gender?: string
+
+	 // Here , ?: indicated an 
+	optional value which need or needn't be 	
+	provided as an argument 
+}
+
+function abcd(obj: User)
+{}
+
+
+
+
+​​​​​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
