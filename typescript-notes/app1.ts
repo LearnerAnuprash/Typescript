@@ -60,5 +60,3 @@ function server(arg: AdminAuthority) {
 // Type:    type abcd = number ;
 //          type abcd = sting;
 // ==> Two types of same name throws error .
-
-// TODO (Fundamentals of Classes & Objects :)
