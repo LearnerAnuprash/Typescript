@@ -14,6 +14,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var Android = /** @class */ (function () {
     function Android() {
     }
@@ -70,6 +79,60 @@ abcdef("ram", 17); // Optional parameter gender
 //TODO  Defaut parameters
 function abc(name, gender) {
     if (gender === void 0) { gender = "not to be disclosed"; }
+    // default argument
     console.log(name, gender);
 }
-abc("Anuprash", "female");
+abc("Anuprash");
+//TODO ***** Functions: Rest Parameters *****
+function ram() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    // Rest operator is : " ... "
+}
+ram(1, 2, 3, 4, 5, 6, 7, 8, 89, 9, 0);
+// If we put '...' in a parameter of function , we are putting the whole array into a single variable as an array
+function friends() {
+    var arr = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arr[_i] = arguments[_i];
+    }
+    console.log(arr);
+}
+friends("Anuprash", "Ravi", "Gotam", "Jack");
+//Using spread operator [...]
+var arr = [1, 2, 3, 4, 5];
+var arr2 = __spreadArray([], arr, true);
+function dus(a, b) {
+    if (typeof a === "string" && b === undefined) {
+        console.log("Only one number");
+    }
+    if (typeof a === "string" && typeof b === "number") {
+        console.log("two params functioin is run");
+    }
+    else {
+        throw new Error("Somethig is wrong !");
+    }
+}
+dus("Hey");
+dus("Hello", 25);
+// TODO ****** GENERICS ********
+function multi(a, b, c) { }
+// USe <H> or <T> or <variable_name> to create a template for initialization of data type
+multi("Anurpash", "Subedi", 20);
+//? ANother example of a generic
+function log(val) {
+    console.log(val);
+}
+log("hey"); // We could also write as : log("Hey")
+function restaurant(obj) { }
+restaurant({ name: "Momos", price: 150, code: "PATHAO12345" });
+//? Another Generic Example
+var BottleMaker = /** @class */ (function () {
+    function BottleMaker(key) {
+        this.key = key;
+    }
+    return BottleMaker;
+}());
+var b1 = new BottleMaker("ABCD");
